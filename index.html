@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cube Net Folding Visualizer | Marcomathematics</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header-text">
+          <h1>Cube Net Folding Visualizer</h1>
+          <p>Explore all 11 distinct nets of a cube and watch them fold into 3D.</p>
+        </div>
+      </header>
+
+      <main class="main">
+        <aside class="sidebar">
+          <section class="panel">
+            <h2>Net Pattern</h2>
+            <label class="field">
+              <span>Choose a net</span>
+              <select id="net-select"></select>
+            </label>
+          </section>
+
+          <section class="panel">
+            <h2>Folding</h2>
+            <div class="button-row">
+              <button id="unfold-btn" type="button" class="btn btn-secondary">Unfold</button>
+              <button id="fold-btn" type="button" class="btn btn-primary">Fold</button>
+            </div>
+            <label class="field">
+              <span>Fold amount: <strong id="fold-label">0%</strong></span>
+              <input id="fold-slider" type="range" min="0" max="100" value="0" step="1" />
+            </label>
+          </section>
+
+          <section class="panel info">
+            <h2>How to use</h2>
+            <ul>
+              <li>Drag to rotate the view</li>
+              <li>Scroll to zoom in and out</li>
+              <li>Right-click drag to pan</li>
+              <li>Select different nets to compare patterns</li>
+            </ul>
+          </section>
+        </aside>
+
+        <div id="canvas-container" class="canvas-container" aria-label="3D cube net viewer"></div>
+      </main>
+
+      <footer class="footer">
+        <span>Marcomathematics</span>
+        <span>11 cube nets · Three.js</span>
+      </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
